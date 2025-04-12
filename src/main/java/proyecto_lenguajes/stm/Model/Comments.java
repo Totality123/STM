@@ -11,7 +11,8 @@ public class Comments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(length = 20, nullable = false)
+    @Lob
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String image_url;
 
     //ID_SUBTAREA
