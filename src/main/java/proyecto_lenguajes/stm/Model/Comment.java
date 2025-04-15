@@ -1,9 +1,13 @@
 package proyecto_lenguajes.stm.Model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "comment")
+
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 public class Comment {
 
     @Id

@@ -22,9 +22,9 @@ public class Project {
     @Column(length = 20, nullable = false)
     private Date date;
 
-    @OneToMany(mappedBy = "proyects", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private List<Task> tasks = new ArrayList<>();
 
-    @OneToMany(mappedBy = "proyects", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private List<Project_User> project_User = new ArrayList<>();
 }

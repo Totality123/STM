@@ -2,9 +2,13 @@ package proyecto_lenguajes.stm.Model;
 
 import jakarta.persistence.*;
 //import lombok.Data;
+import lombok.*;
 
 @Entity
 @Table(name = "project_user")
+
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 public class Project_User {
 
     @Id
