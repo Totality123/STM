@@ -1,16 +1,19 @@
 package proyecto_lenguajes.stm.Model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Table(name = "usuarios")
-@Data
-public class Tasks {
+@Table(name = "tarea")
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private int id;
     @Column(length = 20, nullable = false)
     private String name;
 
@@ -23,6 +26,11 @@ public class Tasks {
     @Column(nullable = false)
     private boolean completed;
 
-    //FK PROYECTO 
+    @ManyToOne
+    @JoinColumn(name = "id_project")
+    private Project project;
 
+
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
+    private List<Subtask> subtasks;
 }

@@ -1,21 +1,23 @@
 package proyecto_lenguajes.stm.Model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
-@Table(name = "comments")
-@Data
-public class Comments {
+@Table(name = "comment")
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private int id;
     @Lob
     @Column(columnDefinition = "TEXT", nullable = false)
     private String image_url;
 
-    //ID_SUBTAREA
+    @ManyToOne
+    @JoinColumn(name = "id_subtask")
+    private Subtask subtask;
 
-    //ID_USUARIOS
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
 }

@@ -1,16 +1,19 @@
 package proyecto_lenguajes.stm.Model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Table(name = "subtasks")
-@Data
-public class Subtasks {
+@Table(name = "subtask")
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
+public class Subtask {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private int id;
     @Column(length = 20, nullable = false)
     private String name;
 
@@ -23,7 +26,12 @@ public class Subtasks {
     @Column(nullable = false)
     private boolean completed;
 
-    //ID_TAREA 
+    @ManyToOne
+    @JoinColumn(name = "id_task")
+    private Task task;
+
+    @OneToMany(mappedBy = "subtask", cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
 }
 
