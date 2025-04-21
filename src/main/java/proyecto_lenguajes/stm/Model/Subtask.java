@@ -17,9 +17,6 @@ public class Subtask {
     @Column(length = 20, nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private int percentage;
-
     @Column(length = 40, nullable = false)
     private String description;
 

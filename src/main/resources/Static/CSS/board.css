@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(245, 196, 94);
+}
+
+.board {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.add-list {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  color: rgb(50, 45, 40);
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 42px;
+  gap: 6px;
+  font-size: 14px;
+  padding: 0 12px;
+}
+
+.add-list:hover {
+  background-color: rgba(255, 255, 255, 0.55);
+}

@@ -1,0 +1,89 @@
+body {
+  background-color: rgb(245, 196, 94);
+  margin: 0;
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.report {
+  background-color: #2e3a4d;
+  border-radius: 12px;
+  padding: 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.report-user,
+.report-title,
+.report-description,
+.report-subtitle {
+  font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255, 165, 0, 0.4);
+}
+
+.report-user,
+.report-title,
+.report-description,
+.report-subtitle {
+  margin-bottom: 15px;
+}
+
+.report-subtasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subtask {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.subtask-title {
+  font-size: 14px;
+}
+
+.subtask-description {
+  font-size: 13px;
+  font-weight: normal;
+  color: #e2e8f0;
+}
+
+.comment {
+  background-color: #1e3a8a;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.comment-username {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.comment hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  margin: 0 0 6px 0;
+}

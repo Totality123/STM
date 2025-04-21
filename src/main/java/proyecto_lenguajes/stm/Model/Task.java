@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "tarea")
+@Table(name = "task")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 public class Task {
@@ -14,6 +14,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
     @Column(length = 20, nullable = false)
     private String name;
 

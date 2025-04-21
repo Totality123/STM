@@ -13,6 +13,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
     @Lob
     @Column(columnDefinition = "TEXT", nullable = false)
     private String image_url;
