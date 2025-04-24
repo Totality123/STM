@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal Comentario</title>
+  <link rel="stylesheet" href="/src/main/resources/Static/CSS/modal_comment.css">
+</head>
+<body>
+  <div class="modal-overlay">
+    <div class="modal">
+      <label class="modal-label">Comentario</label>
+      <textarea class="modal-textarea" placeholder="Escribe tu comentario..."></textarea>
+
+      <label for="imageInput" class="image-button">📷 Adjuntar imagen</label>
+      <input type="file" id="imageInput" accept="image/*">
+
+      <img id="previewImage" class="image-preview" src="" style="display: none;">
+
+      <div class="modal-actions">
+        <button class="btn btn-green">Guardar</button>
+        <button class="btn btn-red">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

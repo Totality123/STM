@@ -63,41 +63,44 @@ body {
 
 .card-buttons {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-top: 10px;
 }
 
-.card-add {
-  background-color: #22c55e;
-  color: white;
-  border: none;
+.card-delete,
+.card-comment {
   padding: 8px 14px;
+  font-size: 13px;
   font-weight: bold;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
+  color: white;
   transition: background-color 0.2s ease;
+  min-width: 110px;
+  text-align: center;
 }
 
-.card-add:hover {
-  background-color: #16a34a;
+.card-delete {
+  background-color: #ef4444;
 }
 
-.card-cancel {
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: #94a3b8;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.card-cancel:hover {
-  color: #cbd5e1;
+.card-delete:hover {
+  background-color: #dc2626;
 }
 
 .card-comment {
   background-color: #3b82f6;
+}
+
+.card-comment:hover {
+  background-color: #2563eb;
+}
+
+.card-completed {
+  background-color: #10b981;
   color: white;
   border: none;
   padding: 8px 14px;
@@ -106,10 +109,14 @@ body {
   cursor: pointer;
   font-size: 13px;
   transition: background-color 0.2s ease;
+  width: 245px;
+  text-align: center;
+  margin: 10px auto 0;
+  display: block;
 }
 
-.card-comment:hover {
-  background-color: #2563eb;
+.card-completed:hover {
+  background-color: #059669;
 }
 
 .section-title {
