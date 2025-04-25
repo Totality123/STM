@@ -30,6 +30,10 @@ public class SubtaskService {
         subtaskRepository.deleteById(id);
     }
 
+public List<Subtask> listar() {
+        return subtaskRepository.findAll();
+    }
+
     public Subtask update(int id, Subtask subtask) {
         Optional<Subtask> existingSubtask = subtaskRepository.findById(id);
         if (existingSubtask.isPresent()) {

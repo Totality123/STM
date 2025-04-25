@@ -30,6 +30,10 @@ public class ProjectService {
         projectRepository.deleteById(id);
     }
 
+    public List<Project> listar() {
+        return projectRepository.findAll();
+    }
+
     public Project update(int id, Project Project) {
         Optional<Project> existingProject = projectRepository.findById(id);
         if (existingProject.isPresent()) {

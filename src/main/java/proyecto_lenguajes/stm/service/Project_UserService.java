@@ -30,6 +30,10 @@ public class Project_UserService {
         project_UserRepository.deleteById(id);
     }
 
+    public List<Project_User> listar() {
+        return project_UserRepository.findAll();
+    }
+
     public Project_User update(int id, Project_User project_User) {
         Optional<Project_User> existingproject_User = project_UserRepository.findById(id);
         if (existingproject_User.isPresent()) {

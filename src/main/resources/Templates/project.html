@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+    <title>STM</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="modal">
+    
+            <h3>Crear Proyecto</h3>
+            <label>Nombre </label>
+            <input type="text" class="modal-input" placeholder="Nombre">
+
+            <label>Fecha de entrega esperada</label>
+            <input type="date" class="modal-input" placeholder="Fecha">
+
+            <div class="modal-actions">
+                <button class="btn-success">Create</button>
+                <button class="btn-danger">Cancel</button>
+            </div>
+    
+        </div>
+    </div>
+</body>
+</html>

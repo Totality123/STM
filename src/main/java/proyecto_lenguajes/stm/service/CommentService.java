@@ -30,6 +30,10 @@ public class CommentService {
         commentRepository.deleteById(id);
     }
 
+public List<Comment> listar() {
+        return commentRepository.findAll();
+    }
+
     public Comment update(int id, Comment comment) {
         Optional<Comment> existingcomment = commentRepository.findById(id);
         if (existingcomment.isPresent()) {
