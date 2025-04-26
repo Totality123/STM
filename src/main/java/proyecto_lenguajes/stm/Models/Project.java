@@ -1,4 +1,4 @@
-package proyecto_lenguajes.stm.Model;
+package proyecto_lenguajes.stm.Models;
 
 import java.sql.Date;
 import java.util.ArrayList;

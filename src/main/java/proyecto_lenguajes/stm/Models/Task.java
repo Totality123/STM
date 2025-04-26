@@ -1,4 +1,4 @@
-package proyecto_lenguajes.stm.Model;
+package proyecto_lenguajes.stm.Models;
 
 import java.util.List;
 

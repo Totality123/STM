@@ -1,5 +1,6 @@
 package proyecto_lenguajes.stm.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import proyecto_lenguajes.stm.service.TaskService;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
-@RestController
+@Controller
 @RequestMapping("/tasks")
 public class TaskController {
 

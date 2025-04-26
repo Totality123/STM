@@ -1,12 +1,13 @@
 package proyecto_lenguajes.stm.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import proyecto_lenguajes.stm.service.Project_UserService;
 
 
-@RestController
+@Controller
 @RequestMapping("/project_users")
 public class Project_UserController {
 

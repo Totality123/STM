@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import proyecto_lenguajes.stm.Model.Task;
+import proyecto_lenguajes.stm.Models.Task;
 import proyecto_lenguajes.stm.repository.TaskRepository;
 
 @Service
