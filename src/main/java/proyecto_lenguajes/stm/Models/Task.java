@@ -31,7 +31,6 @@ public class Task {
     @JoinColumn(name = "id_project")
     private Project project;
 
-
     @OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
     private List<Subtask> subtasks;
 }

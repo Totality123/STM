@@ -12,7 +12,7 @@ import proyecto_lenguajes.stm.repository.SubtaskRepository;
 @AllArgsConstructor
 public class SubtaskService {
     
-      @Autowired
+    @Autowired
     private SubtaskRepository subtaskRepository;
 
     public Subtask add(Subtask subtask) {
@@ -30,7 +30,7 @@ public class SubtaskService {
         subtaskRepository.deleteById(id);
     }
 
-public List<Subtask> listar() {
+    public List<Subtask> list() {
         return subtaskRepository.findAll();
     }
 

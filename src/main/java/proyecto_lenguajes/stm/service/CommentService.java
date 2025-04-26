@@ -11,8 +11,8 @@ import proyecto_lenguajes.stm.repository.CommentRepository;
 @Service
 @AllArgsConstructor
 public class CommentService {
-    
-      @Autowired
+
+    @Autowired
     private CommentRepository commentRepository;
 
     public Comment add(Comment comment) {
@@ -26,11 +26,12 @@ public class CommentService {
     public Optional<Comment> getById(int id) {
         return commentRepository.findById(id);
     }
+
     public void delete(int id) {
         commentRepository.deleteById(id);
     }
 
-public List<Comment> listar() {
+    public List<Comment> list() {
         return commentRepository.findAll();
     }
 
@@ -43,4 +44,3 @@ public List<Comment> listar() {
         }
     }
 }
-

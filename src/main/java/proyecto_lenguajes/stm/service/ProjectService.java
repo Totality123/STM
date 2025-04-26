@@ -30,7 +30,7 @@ public class ProjectService {
         projectRepository.deleteById(id);
     }
 
-    public List<Project> listar() {
+    public List<Project> list() {
         return projectRepository.findAll();
     }
 
