@@ -5,13 +5,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<<<<<<< HEAD
 		<version>3.4.4</version>
 		<relativePath/>
-=======
-		<version>3.4.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
->>>>>>> 2fd401b2745480faaa136dd5d0fa2af302ce6e9d
 	</parent>
 	<groupId>proyecto_lenguajes</groupId>
 	<artifactId>stm</artifactId>
