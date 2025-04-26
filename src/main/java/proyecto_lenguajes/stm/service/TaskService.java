@@ -11,8 +11,8 @@ import proyecto_lenguajes.stm.repository.TaskRepository;
 @Service
 @AllArgsConstructor
 public class TaskService {
-    
-      @Autowired
+
+    @Autowired
     private TaskRepository taskRepository;
 
     public Task add(Task Task) {
@@ -26,8 +26,13 @@ public class TaskService {
     public Optional<Task> getById(int id) {
         return taskRepository.findById(id);
     }
+
     public void delete(int id) {
         taskRepository.deleteById(id);
+    }
+
+    public List<Task> listar() {
+        return taskRepository.findAll();
     }
 
     public Task update(int id, Task task) {

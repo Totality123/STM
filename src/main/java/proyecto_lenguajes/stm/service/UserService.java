@@ -19,6 +19,10 @@ public class UserService {
         return userRepository.save(User);
     }
 
+    public List<User> listar() {
+        return userRepository.findAll();
+    }
+
     public List<User> get() {
         return userRepository.findAll();
     }
