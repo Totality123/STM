@@ -33,15 +33,7 @@ public class Project_UserService {
     public List<Project_User> list() {
         return project_UserRepository.findAll();
     }
-
-    public Project_User update(int id, Project_User project_User) {
-        Optional<Project_User> existingproject_User = project_UserRepository.findById(id);
-        if (existingproject_User.isPresent()) {
-            return project_UserRepository.save(project_User);
-        } else {
-            throw new RuntimeException("relacion Proyecto/Usuario no encontrado con ID: " + id);
-        }
-    }
+    
 }
 
 
