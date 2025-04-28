@@ -3,16 +3,15 @@ package proyecto_lenguajes.stm.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import proyecto_lenguajes.stm.Models.User;
 import proyecto_lenguajes.stm.service.UserService;
 
-
-@Controller
+@Tag(name = "Usuarios", description = "API para gestionar Usuarios") // Grupo en Swagger
+@RestController
 @RequestMapping("/users")
 public class UserController {
 
@@ -24,7 +23,7 @@ public class UserController {
     
     @GetMapping
     @Operation(summary = "Obtener todos los usuarios", description = "Devuelve una lista de usuarios")
-    public List<User> list(Model model) {
+    public List<User> list() {
         return userService.list() ;
     }
 

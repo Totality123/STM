@@ -23,7 +23,7 @@ public class ProjectController {
 
     @GetMapping
     @Operation(summary = "Obtener todos los Proyectos", description = "Devuelve una lista de Proyectos")
-    public List<Project> list(Model model) {
+    public List<Project> list() {
         return projectService.list();
     }
 

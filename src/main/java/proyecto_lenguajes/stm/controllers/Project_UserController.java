@@ -2,16 +2,15 @@ package proyecto_lenguajes.stm.controllers;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import proyecto_lenguajes.stm.Models.Project_User;
 import proyecto_lenguajes.stm.service.Project_UserService;
 
-
-@Controller
+@Tag(name = "relacion Ptoyecto/Usuario", description = "API para gestionar relacion Ptoyecto/Usuario") // Grupo en Swagger
+@RestController
 @RequestMapping("/project_users")
 public class Project_UserController {
 
@@ -23,7 +22,7 @@ public class Project_UserController {
 
     @GetMapping
     @Operation(summary = "Obtener todas las relaciones de un proyecto, con sus usuarios", description = "Devuelve una lista de Proyectos con usuario")
-    public List<Project_User> list(Model model) {
+    public List<Project_User> list() {
         return project_UserService.list();
     }
     
