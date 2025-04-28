@@ -1,5 +1,7 @@
 package proyecto_lenguajes.stm.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +25,8 @@ public class SubtaskController {
 
     @GetMapping
     @Operation(summary = "Listar subtareas", description = "Devuelve una lista de todas las subtareas")
-    public String list(Model model) {
-        model.addAttribute("subtask", subtaskService.list());
-        return "index";
+    public List<Subtask> list(Model model) {
+        return subtaskService.list();
     }
 
     @PostMapping("/add")

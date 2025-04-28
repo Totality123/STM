@@ -1,5 +1,7 @@
 package proyecto_lenguajes.stm.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +25,8 @@ public class CommentController {
     
     @GetMapping
     @Operation(summary = "Listar comentarios", description = "Devuelve una lista de todos los comentarios")
-    public String list(Model model) {
-        model.addAttribute("comments", commentService.list());
-        return "index";
+    public List<Comment> list(Model model) {
+        return commentService.list();
     }
 
     @PostMapping("/add")

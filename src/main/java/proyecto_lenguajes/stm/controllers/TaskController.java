@@ -2,6 +2,9 @@ package proyecto_lenguajes.stm.controllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
+
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,9 +25,8 @@ public class TaskController {
 
     @GetMapping
     @Operation(summary = "Listar tareas", description = "Devuelve una lista de todas las tareas")
-    public String listar(Model model) {
-        model.addAttribute("tareas", taskService.list());
-        return "index";
+    public List<Task> list(Model model) {
+        return taskService.list();
     }
 
     @PostMapping("/add")
