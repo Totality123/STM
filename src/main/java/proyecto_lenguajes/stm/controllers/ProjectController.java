@@ -2,7 +2,6 @@ package proyecto_lenguajes.stm.controllers;
 
 import java.util.List;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
