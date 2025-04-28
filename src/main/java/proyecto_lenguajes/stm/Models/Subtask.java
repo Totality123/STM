@@ -1,6 +1,5 @@
 package proyecto_lenguajes.stm.Models;
 
-import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,8 +26,7 @@ public class Subtask {
     @JoinColumn(name = "id_task")
     private Task task;
 
-    @OneToMany(mappedBy = "subtask", cascade = CascadeType.ALL)
-    private List<Comment> comments;
+ 
 
 }
 

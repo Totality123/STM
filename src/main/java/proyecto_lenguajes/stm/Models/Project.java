@@ -1,8 +1,6 @@
 package proyecto_lenguajes.stm.Models;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,9 +20,5 @@ public class Project {
     @Column(length = 20, nullable = false)
     private Date date;
 
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
-    private List<Task> tasks = new ArrayList<>();
-
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
-    private List<Project_User> project_User = new ArrayList<>();
+  
 }

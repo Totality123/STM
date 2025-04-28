@@ -1,6 +1,6 @@
 package proyecto_lenguajes.stm.Models;
 
-import java.util.List;
+
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,11 +20,5 @@ public class User {
 
     @Column(length = 20, nullable = false)
     private String password;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Comment> comments;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Project_User> project_User;
 }
 

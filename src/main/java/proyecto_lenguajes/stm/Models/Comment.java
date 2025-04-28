@@ -15,8 +15,12 @@ public class Comment {
     private int id;
     
     @Lob
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT")
     private String image_url;
+
+    @Lob
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String comment;
 
     @ManyToOne
     @JoinColumn(name = "id_subtask")
