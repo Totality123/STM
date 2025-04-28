@@ -10,7 +10,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import proyecto_lenguajes.stm.Models.Project_User;
 import proyecto_lenguajes.stm.service.Project_UserService;
 
-
 @Controller
 @RequestMapping("/project_users")
 public class Project_UserController {
