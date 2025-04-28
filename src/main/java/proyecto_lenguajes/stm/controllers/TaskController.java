@@ -2,17 +2,14 @@ package proyecto_lenguajes.stm.controllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
-
 import java.util.List;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import proyecto_lenguajes.stm.Models.Task;
 import proyecto_lenguajes.stm.service.TaskService;
 
-@Controller
+@RestController
 @RequestMapping("/tasks")
 @Tag(name = "Tareas", description = "API para gestionar Tareas")
 public class TaskController {

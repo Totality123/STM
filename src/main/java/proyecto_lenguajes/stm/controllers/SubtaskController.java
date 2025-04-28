@@ -1,8 +1,6 @@
 package proyecto_lenguajes.stm.controllers;
 
 import java.util.List;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +10,7 @@ import proyecto_lenguajes.stm.service.SubtaskService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
 
-@Controller
+@RestController
 @RequestMapping("/subtasks")
 @Tag(name = "Subtareas", description = "API para gestionar Subtareas")
 public class SubtaskController {

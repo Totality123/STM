@@ -1,8 +1,6 @@
 package proyecto_lenguajes.stm.controllers;
 
 import java.util.List;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +10,7 @@ import proyecto_lenguajes.stm.Models.Comment;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
 
-@Controller
+@RestController
 @RequestMapping("/comments")
 @Tag(name = "Comentarios", description = "API para gestionar Comentarios")
 public class CommentController {
