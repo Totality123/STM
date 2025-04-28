@@ -1,5 +1,7 @@
 package proyecto_lenguajes.stm.controllers;
 
+import java.util.List;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,9 +23,8 @@ public class ProjectController {
 
     @GetMapping
     @Operation(summary = "Obtener todos los Proyectos", description = "Devuelve una lista de Proyectos")
-    public String list(Model model) {
-        model.addAttribute("proyectos", projectService.list());
-        return "index";
+    public List<Project> list(Model model) {
+        return projectService.list();
     }
 
     @GetMapping("/{id}")
