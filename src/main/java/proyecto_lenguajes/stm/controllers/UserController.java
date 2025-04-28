@@ -1,5 +1,6 @@
 package proyecto_lenguajes.stm.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
@@ -23,9 +24,8 @@ public class UserController {
     
     @GetMapping
     @Operation(summary = "Obtener todos los usuarios", description = "Devuelve una lista de usuarios")
-    public String list(Model model) {
-        model.addAttribute("usuarios", userService.list());
-        return "index";
+    public List<User> list(Model model) {
+        return userService.list() ;
     }
 
     @GetMapping("/{id}")

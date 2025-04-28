@@ -1,5 +1,7 @@
 package proyecto_lenguajes.stm.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +23,8 @@ public class Project_UserController {
 
     @GetMapping
     @Operation(summary = "Obtener todas las relaciones de un proyecto, con sus usuarios", description = "Devuelve una lista de Proyectos con usuario")
-    public String list(Model model) {
-        model.addAttribute("proyectos", project_UserService.list());
-        return "index";
+    public List<Project_User> list(Model model) {
+        return project_UserService.list();
     }
     
     @PostMapping
