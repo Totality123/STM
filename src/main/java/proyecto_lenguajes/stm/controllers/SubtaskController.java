@@ -35,14 +35,14 @@ public class SubtaskController {
         return "redirect:/subtasks";
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     @Operation(summary = "Eliminar subtarea", description = "Elimina una subtarea por su ID")
     public String delete(@PathVariable int id) {
         subtaskService.delete(id);
         return "redirect:/subtasks";
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     @Operation(summary = "Actualizar subtarea", description = "Actualiza una subtarea existente por su ID")
     public String update(@PathVariable int id, @ModelAttribute Subtask subtask) {
         subtaskService.update(id, subtask);

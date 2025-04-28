@@ -35,14 +35,14 @@ public class CommentController {
         return "redirect:/comments";
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     @Operation(summary = "Eliminar comentario", description = "Elimina un comentario por su ID")
     public String delete(@PathVariable int id) {
         commentService.delete(id);
         return "redirect:/comments";
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     @Operation(summary = "Actualizar comentario", description = "Actualiza un comentario existente por su ID")
     public String update(@PathVariable int id, @ModelAttribute Comment comment) {
         commentService.update(id, comment);

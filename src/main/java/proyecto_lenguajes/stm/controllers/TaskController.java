@@ -34,14 +34,14 @@ public class TaskController {
         return "redirect:/tasks";
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     @Operation(summary = "Eliminar tarea", description = "Elimina una tarea por su ID")
     public String delete(@PathVariable int id) {
         taskService.delete(id);
         return "redirect:/tasks";
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     @Operation(summary = "Actualizar tarea", description = "Actualiza una tarea existente por su ID")
     public String update(@PathVariable int id, @ModelAttribute Task task) {
         taskService.update(id, task);
