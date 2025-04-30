@@ -11,7 +11,7 @@ import proyecto_lenguajes.stm.service.ProjectService;
 
 @Tag(name = "Projectos", description = "API para gestionar Proyectos") // Grupo en Swagger
 @RestController
-@RequestMapping("/")
+@RequestMapping("/project")
 public class ProjectController {
 
     private final ProjectService projectService;
