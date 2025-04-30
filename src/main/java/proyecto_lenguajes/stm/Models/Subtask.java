@@ -1,8 +1,8 @@
 package proyecto_lenguajes.stm.Models;
 
-
 import jakarta.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "subtask")
@@ -13,6 +13,7 @@ public class Subtask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(length = 20, nullable = false)
     private String name;
 
@@ -24,9 +25,6 @@ public class Subtask {
 
     @ManyToOne
     @JoinColumn(name = "id_task")
+    @JsonBackReference
     private Task task;
-
- 
-
 }
-

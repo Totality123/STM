@@ -1,11 +1,6 @@
 body {
   margin: 0;
   background-color: rgb(245, 196, 94);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -15,11 +10,13 @@ body {
   border-radius: 10px;
   padding: 16px;
   width: 260px;
-  min-height: 90vh;
+  min-height: 120px; 
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; 
 }
 
 .column-title,

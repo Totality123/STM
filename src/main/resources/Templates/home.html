@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Documentoss</title>
-    <link rel="stylesheet" th:href="@{/css/general.css}">
-    <link rel="stylesheet" th:href="@{/css/board.css}">
-
+  <meta charset="UTF-8">
+  <title>Documentoss</title>
+  <link rel="stylesheet" th:href="@{/css/general.css}">
+  <link rel="stylesheet" th:href="@{/css/board.css}">
+  <link rel="stylesheet" th:href="@{/css/card_task.css}">
+  <link rel="stylesheet" th:href="@{/css/card_subtask.css}">
 </head>
 <body>
 
@@ -23,16 +24,17 @@
   </header>
 
   <div class="Cuerpo">
+    <div class="board" id="board">
+      <button class="add-list" id="add-list">➕ Add a task</button>
 
-    <div class="board">
-      <button class="add-list">➕ Add a task</button>
     </div>
   </div>
-</div>
-<a href="/board">Board</a><br>
-<a href="/comment">comment</a><br>
-<a href="/modal">modal</a>
 
-  <script src="js/index.js"></script>
+  <a href="/board">Board</a><br>
+  <a href="/comment">Comment</a><br>
+  <a href="/modal">Modal</a>
+
+  <script th:src="@{/js/task.js}"></script>
+  <script th:src="@{/js/subtask.js}"></script>
 </body>
 </html>

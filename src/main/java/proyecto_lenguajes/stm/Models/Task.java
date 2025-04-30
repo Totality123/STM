@@ -1,8 +1,9 @@
 package proyecto_lenguajes.stm.Models;
 
-
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "task")
@@ -30,4 +31,7 @@ public class Task {
     @JoinColumn(name = "id_project")
     private Project project;
 
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Subtask> subtasks;
 }

@@ -6,10 +6,12 @@ body {
 
 .board {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   gap: 20px;
   padding: 20px;
   overflow-x: auto;
+  height: calc(100vh - 100px); 
 }
 
 .add-list {
@@ -25,10 +27,13 @@ body {
   align-items: center;
   justify-content: center;
   width: 260px;
-  height: 42px;
+  height: fit-content;
+  min-height: 80px;
   gap: 6px;
   font-size: 14px;
   padding: 0 12px;
+  margin-top: 8px;
+  flex-shrink: 0; 
 }
 
 .add-list:hover {
