@@ -1,6 +1,7 @@
 package proyecto_lenguajes.stm.controllers;
 
 import java.util.List;
+
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -10,7 +11,7 @@ import proyecto_lenguajes.stm.service.ProjectService;
 
 @Tag(name = "Projectos", description = "API para gestionar Proyectos") // Grupo en Swagger
 @RestController
-@RequestMapping("/")
+@RequestMapping("/project")
 public class ProjectController {
 
     private final ProjectService projectService;
