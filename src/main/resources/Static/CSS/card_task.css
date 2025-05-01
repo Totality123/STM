@@ -10,20 +10,29 @@ body {
   border-radius: 10px;
   padding: 16px;
   width: 260px;
-  min-height: 120px; 
+  min-height: 120px;
   height: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
-.column-title,
-.column-description {
+.column-title {
   color: white;
   font-weight: bold;
   font-size: 14px;
+  margin: 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 165, 0, 0.4);
+  width: calc(100% - 12px);
+}
+
+.column-description {
+  color: white;
+  font-weight: normal;
+  font-size: 13px;
   margin: 0 6px;
   padding-bottom: 4px;
   border-bottom: 1px solid rgba(255, 165, 0, 0.4);
@@ -67,18 +76,20 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: auto;
+  width: 100%;
 }
 
 .card-buttons {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   gap: 10px;
-  margin-top: 10px;
+  margin: 0 6px 10px 6px;
 }
 
 .card-add,
 .card-delete {
-  padding: 8px 14px;
+  width: calc(50% - 5px); 
+  padding: 10px 0;
   font-size: 13px;
   font-weight: bold;
   border: none;
@@ -86,8 +97,8 @@ body {
   cursor: pointer;
   color: white;
   transition: background-color 0.2s ease;
-  min-width: 130px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .card-add {

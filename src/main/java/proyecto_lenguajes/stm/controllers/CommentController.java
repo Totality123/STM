@@ -46,5 +46,5 @@ public class CommentController {
     public String update(@PathVariable int id, @ModelAttribute Comment comment) {
         commentService.update(id, comment);
         return "redirect:/comments";
-    }
+    }  
 }

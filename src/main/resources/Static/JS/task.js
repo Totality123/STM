@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('/tasks')
+  fetch('http://localhost:8080/tasks')
     .then(res => res.json())
     .then(tareas => {
       const board = document.getElementById('board')
