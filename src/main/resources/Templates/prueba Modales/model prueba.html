@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Emergente</title>
+    <style>
+        /* Estilos para el fondo del modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        /* Estilos para el contenido del modal */
+        .modal-content {
+            background-color: rgb(95, 14, 14);
+            margin: 15% auto;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Estilos para el botón de cierre */
+        .close {
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="openModal()">Abrir Ventana Emergente</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Esta es una ventana emergente.</p>
+            <button onclick="action()">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function action() {
+            alert("Has aceptado.");
+            closeModal();
+        }
+    </script>
+
+</body>
+</html>
