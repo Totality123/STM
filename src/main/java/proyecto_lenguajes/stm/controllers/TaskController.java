@@ -26,7 +26,7 @@ public class TaskController {
         return taskService.list();
     }
 
-    @GetMapping("/listByid")
+    @GetMapping("/listByid/{id}")
     @Operation(summary = "Listar tareas por Proyecto", description = "Devuelve una lista de tareas basado en un proyecto")
     public List<Task> listByid(@PathVariable int id) {
         return taskService.listByid(id);

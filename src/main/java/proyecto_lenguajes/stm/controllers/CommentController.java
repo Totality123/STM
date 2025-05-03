@@ -29,7 +29,7 @@ public class CommentController {
         return commentService.list();
     }
 
-    @GetMapping("/listByid")
+    @GetMapping("/listByid/{id}")
     @Operation(summary = "Lista comentarios por subtareas", description = "Devuelve una lista de los comentarios por id de subtarea")
     public List<Comment> listByid(@PathVariable int id) {
         return commentService.listByid(id);

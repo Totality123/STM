@@ -26,7 +26,7 @@ public class Project_UserController {
         return project_UserService.list();
     }
 
-    @GetMapping("/listByid")
+    @GetMapping("/listByid/{id}")
     @Operation(summary = "Obtener todas las relaciones de un proyecto, con sus usuarios por id_proyecto", description = "Devuelve una lista de Proyectos con usuario ")
     public List<Project_User> listByid(@PathVariable int id) {
         return project_UserService.puntosXproyecto(id);

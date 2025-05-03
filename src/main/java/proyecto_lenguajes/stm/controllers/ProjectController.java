@@ -26,7 +26,7 @@ public class ProjectController {
         return projectService.list();
     }
 
-    @GetMapping("/listByid")
+    @GetMapping("/listByid/{id}")
     @Operation(summary = "Obtener todos los Proyectos", description = "Devuelve una lista de Proyectos")
     public List<Project> listByid(@PathVariable int id) {
         return projectService.listByid(id);

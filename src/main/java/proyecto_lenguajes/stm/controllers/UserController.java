@@ -27,7 +27,7 @@ public class UserController {
         return userService.list() ;
     }
 
-    @GetMapping("/listByid")
+    @GetMapping("/listByid/{id}")
     @Operation(summary = "Obtener todos los usuarios por un proyecto", description = "Devuelve una lista de usuarios pertenecinetes a un proyecto")
     public List<User> listByid(@PathVariable int id) {
         return userService.listByid(id);
