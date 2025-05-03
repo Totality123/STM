@@ -26,6 +26,12 @@ public class ProjectController {
         return projectService.list();
     }
 
+    @GetMapping("/listByid")
+    @Operation(summary = "Obtener todos los Proyectos", description = "Devuelve una lista de Proyectos")
+    public List<Project> listByid(@PathVariable int id) {
+        return projectService.listByid(id);
+    }
+
     @GetMapping("/{id}")
     @Operation(summary = "Obtener un proyecto por ID", description = "Busca un proyecto en la base de datos según su ID")
     public Project get(@PathVariable int id) {

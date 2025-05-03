@@ -25,6 +25,12 @@ public class Project_UserController {
     public List<Project_User> list() {
         return project_UserService.list();
     }
+
+    @GetMapping("/listByid")
+    @Operation(summary = "Obtener todas las relaciones de un proyecto, con sus usuarios por id_proyecto", description = "Devuelve una lista de Proyectos con usuario ")
+    public List<Project_User> listByid(@PathVariable int id) {
+        return project_UserService.puntosXproyecto(id);
+    }
     
     @PostMapping
     @Operation(summary = "Crear una nueva relación Proyecto/usuario", description = "Agrega una relación Proyecto/usuario a la base de datos")

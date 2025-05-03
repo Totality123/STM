@@ -35,6 +35,10 @@ public class CommentService {
         return commentRepository.findAll();
     }
 
+    public List<Comment> listByid(int id_subtarea) {
+        return commentRepository.listByid(id_subtarea);
+    }
+
     public Comment update(int id, Comment comment) {
         Optional<Comment> existingcomment = commentRepository.findById(id);
         if (existingcomment.isPresent()) {

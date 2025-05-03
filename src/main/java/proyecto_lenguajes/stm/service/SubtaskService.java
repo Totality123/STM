@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+
 import proyecto_lenguajes.stm.Models.Subtask;
 import proyecto_lenguajes.stm.repository.SubtaskRepository;
 
@@ -34,6 +35,10 @@ public class SubtaskService {
         return subtaskRepository.findAll();
     }
 
+    public List<Subtask> listByid(int id_tarea) {
+        return subtaskRepository.listByid(id_tarea);
+    }
+    
     public Subtask update(int id, Subtask subtask) {
         Optional<Subtask> existingSubtask = subtaskRepository.findById(id);
         if (existingSubtask.isPresent()) {

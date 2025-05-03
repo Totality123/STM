@@ -34,6 +34,10 @@ public class ProjectService {
         return projectRepository.findAll();
     }
 
+    public List<Project> listByid(int id_usuario) {
+        return projectRepository.listByid(id_usuario);
+    }
+
     public Project update(int id, Project Project) {
         Optional<Project> existingProject = projectRepository.findById(id);
         if (existingProject.isPresent()) {
@@ -44,4 +48,7 @@ public class ProjectService {
             throw new RuntimeException("proyecto no encontrado con ID: " + id);
         }
     }
+
+
+
 }

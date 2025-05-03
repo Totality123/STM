@@ -26,6 +26,12 @@ public class TaskController {
         return taskService.list();
     }
 
+    @GetMapping("/listByid")
+    @Operation(summary = "Listar tareas por Proyecto", description = "Devuelve una lista de tareas basado en un proyecto")
+    public List<Task> listByid(@PathVariable int id) {
+        return taskService.listByid(id);
+    }
+
     @PostMapping("/add")
     @Operation(summary = "Agregar tarea", description = "Agrega una nueva tarea")
     public String add(@ModelAttribute Task task) {

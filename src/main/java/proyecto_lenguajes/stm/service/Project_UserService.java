@@ -34,6 +34,9 @@ public class Project_UserService {
         return project_UserRepository.findAll();
     }
     
+    public List<Project_User> puntosXproyecto(int id_proyecto){
+        return project_UserRepository.puntosXproyecto(id_proyecto);
+    }
 }
 
 

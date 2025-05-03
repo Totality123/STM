@@ -11,8 +11,8 @@ import proyecto_lenguajes.stm.repository.UserRepository;
 @Service
 @AllArgsConstructor
 public class UserService {
-    
-      @Autowired
+
+    @Autowired
     private UserRepository userRepository;
 
     public User add(User User) {
@@ -30,8 +30,13 @@ public class UserService {
     public Optional<User> getById(int id) {
         return userRepository.findById(id);
     }
+
     public void delete(int id) {
         userRepository.deleteById(id);
+    }
+
+    public List<User> listByid(int id_proyecto) {
+        return userRepository.listByid(id_proyecto);
     }
 
     public User update(int id, User user) {
@@ -43,4 +48,3 @@ public class UserService {
         }
     }
 }
-

@@ -27,6 +27,12 @@ public class SubtaskController {
         return subtaskService.list();
     }
 
+    @GetMapping("/listByid")
+    @Operation(summary = "Listar subtareas por tarea", description = "Devuelve una lista de todas las subtareas de una tarea")
+    public List<Subtask> listByid(@PathVariable int id) {
+        return subtaskService.listByid(id);
+    }
+
     @PostMapping("/add")
     @Operation(summary = "Agregar subtarea", description = "Agrega una nueva subtarea")
     public String add(@ModelAttribute Subtask subtask) {
