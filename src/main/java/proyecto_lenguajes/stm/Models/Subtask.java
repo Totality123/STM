@@ -2,9 +2,7 @@ package proyecto_lenguajes.stm.Models;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 

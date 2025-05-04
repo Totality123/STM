@@ -17,6 +17,31 @@ body {
   gap: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
+  position: relative;
+}
+
+.card-delete-x {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background-color: transparent;
+  color: #f87171;
+  border: 2px solid #f87171;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.card-delete-x:hover {
+  background-color: #f87171;
+  color: white;
 }
 
 .column-title {
@@ -87,8 +112,8 @@ body {
 }
 
 .card-add,
-.card-delete {
-  width: calc(50% - 5px); 
+.card-update {
+  width: calc(50% - 5px);
   padding: 10px 0;
   font-size: 13px;
   font-weight: bold;
@@ -109,12 +134,12 @@ body {
   background-color: #16a34a;
 }
 
-.card-delete {
-  background-color: #ef4444;
+.card-update {
+  background-color: #3b82f6;
 }
 
-.card-delete:hover {
-  background-color: #dc2626;
+.card-update:hover {
+  background-color: #2563eb;
 }
 
 .section-title {
@@ -126,3 +151,9 @@ body {
   padding-bottom: 4px;
   width: calc(100% - 12px);
 }
+
+.card-add,
+.card-update {
+  text-transform: none !important;
+}
+

@@ -6,28 +6,51 @@
   <link rel="stylesheet" th:href="@{/css/card_task.css}">
   <link rel="stylesheet" th:href="@{/css/card_subtask.css}">
   <link rel="stylesheet" th:href="@{/css/comment.css}">
-
+  <link rel="stylesheet" th:href="@{/css/modal.css}">
 </head>
 <body>
+
   <a href="/">Home</a>
   <div class="column">
+    <button class="card-delete-x">✕</button>
+
     <div class="column-title">Frontend</div>
     <div class="column-description">Hacer estructura base de los html</div>
     <div class="progress-title">Progress bar</div>
-    
+
     <progress class="column-progress" value="2" max="4"></progress>
 
     <div class="section-title">Subtareas</div>
-    <div class="subtasks">
-      
-    </div>
+    <div class="subtasks"></div>
 
     <div class="card-form">
       <div class="card-buttons">
         <button class="card-add">Add a subtask</button>
-        <button class="card-delete">Delete</button>
+        <button class="card-update">Update</button>
       </div>
     </div>
   </div>
+
+  <!-- Modal embebido -->
+  <div id="overlay" class="overlay" style="display: none;">
+    <div class="modal">
+      <label>Título</label>
+      <input type="text" class="modal-input" id="modal-title" placeholder="Título">
+
+      <div class="modal-section">
+        <label>Descripción</label>
+        <textarea class="modal-textarea" id="modal-description" placeholder="Escribe una descripción..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-success" id="modal-submit">Create</button>
+        <button onclick="closeModal()" class="btn-danger">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script th:src="@{/js/modal.js}"></script>
+  <script th:src="@{/js/task.js}"></script>
+
 </body>
 </html>

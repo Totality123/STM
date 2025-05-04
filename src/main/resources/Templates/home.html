@@ -10,7 +10,6 @@
   <link rel="stylesheet" th:href="@{/css/card_subtask.css}">
   <link rel="stylesheet" th:href="@{/css/comment.css}">
   <link rel="stylesheet" th:href="@{/css/modal.css}">
-
 </head>
 
 <body>
@@ -27,29 +26,29 @@
     </nav>
     <button class="create-button" onclick="openModal()">Crear</button>
   </header>
-<!-- esto de aqui es el modal-->
+
+  <!-- esto de aqui es el modal -->
   <div id="overlay" class="overlay">
     <div class="modal">
       <label>Título</label>
-      <input type="text" class="modal-input" placeholder="Título">
+      <input type="text" class="modal-input" id="modal-title" placeholder="Título">
 
       <div class="modal-section">
         <label>Descripción</label>
-        <textarea class="modal-textarea" placeholder="Escribe una descripción..."></textarea>
+        <textarea class="modal-textarea" id="modal-description" placeholder="Escribe una descripción..."></textarea>
       </div>
 
       <div class="modal-actions">
-        <button class="btn-success">Create</button>
+        <button class="btn-success" id="modal-submit">Create</button>
         <button onclick="closeModal()" class="btn-danger">Cancel</button>
       </div>
-
     </div>
   </div>
-<!-- Aqui termina el modal-->
+  <!-- Aqui termina el modal -->
+
   <div class="Cuerpo">
     <div class="board" id="board">
       <button class="add-list" id="add-list">➕ Add a task</button>
-
     </div>
   </div>
 

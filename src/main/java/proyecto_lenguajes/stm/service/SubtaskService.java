@@ -3,16 +3,14 @@ package proyecto_lenguajes.stm.service;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import lombok.AllArgsConstructor;
-
 import proyecto_lenguajes.stm.Models.Subtask;
 import proyecto_lenguajes.stm.repository.SubtaskRepository;
 
 @Service
 @AllArgsConstructor
 public class SubtaskService {
-    
+
     @Autowired
     private SubtaskRepository subtaskRepository;
 
@@ -27,6 +25,7 @@ public class SubtaskService {
     public Optional<Subtask> getById(int id) {
         return subtaskRepository.findById(id);
     }
+
     public void delete(int id) {
         subtaskRepository.deleteById(id);
     }
@@ -38,7 +37,7 @@ public class SubtaskService {
     public List<Subtask> listByid(int id_tarea) {
         return subtaskRepository.listByid(id_tarea);
     }
-    
+
     public Subtask update(int id, Subtask subtask) {
         Optional<Subtask> existingSubtask = subtaskRepository.findById(id);
         if (existingSubtask.isPresent()) {

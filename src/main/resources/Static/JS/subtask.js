@@ -10,8 +10,8 @@ function renderSubtask(subtask, contenedor) {
 
   contenedor.appendChild(sub)
 
- // if (subtask.comments && Array.isArray(subtask.comments)) {
-// const commentsContainer = sub.querySelector('.comments')
-//    subtask.comments.forEach(comment => renderComment(comment, commentsContainer))
-//  }
+  if (subtask.comments && Array.isArray(subtask.comments)) {
+    const commentsContainer = sub.querySelector('.comments')
+     subtask.comments.forEach(comment => renderComment(comment, commentsContainer))
+  }
 }
