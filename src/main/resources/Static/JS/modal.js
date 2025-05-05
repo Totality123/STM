@@ -69,4 +69,38 @@ document.getElementById('modal-submit').addEventListener('click', () => {
     })
     .catch(err => console.error('Error al crear subtarea:', err));
   }
+
+  else {
+    const nuevaTarea = {
+      name,
+      description,
+      percentage: 0,
+      subtasks: []
+    };
+
+    fetch('http://localhost:8080/tasks/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(nuevaTarea)
+    })
+    .then(() => {
+      closeModal();
+      cargarTareas();
+    })
+    .catch(err => console.error('Error al crear tarea:', err));
+  }
+});
+
+// ✅ este es el único cambio que agregamos
+document.querySelector('.add-list')?.addEventListener('click', () => {
+  tareaEnEdicion = null;
+  tareaParaSubtarea = null;
+
+  document.getElementById('modal-title').value = '';
+  document.getElementById('modal-description').value = '';
+  document.getElementById('modal-submit').textContent = 'Create';
+
+  openModal();
 });
