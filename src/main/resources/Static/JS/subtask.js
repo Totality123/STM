@@ -6,6 +6,9 @@ function renderSubtask(subtask, contenedor) {
   <div class="subtask-title">${subtask.name}</div>
   <p class="subtask-desc">${subtask.description}</p>
   <div class="comments"></div>
+   <div class="modal-actions">
+        <button class="btn btn-green" onclick="openModalComment(${subtask.id})">add Comment</button>
+      </div>
 `
 
   contenedor.appendChild(sub)
@@ -15,3 +18,4 @@ function renderSubtask(subtask, contenedor) {
      subtask.comments.forEach(comment => renderComment(comment, commentsContainer))
   }
 }
+
