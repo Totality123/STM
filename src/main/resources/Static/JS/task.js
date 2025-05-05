@@ -37,7 +37,7 @@ function crearTarjeta(task) {
     <div class="subtasks"></div>
     <div class="card-form">
       <div class="card-buttons">
-        <button class="card-add">Add a subtask</button>
+        <button class="card-add">+</button>
         <button class="card-update">Update</button>
         <button class="card-report">Report</button>
       </div>
