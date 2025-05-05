@@ -9,8 +9,8 @@ function cargarTareas() {
   fetch('http://localhost:8080/tasks')
     .then(res => res.json())
     .then(tareas => {
-      const board = document.getElementById('board');
-      const addButton = document.getElementById('add-list');
+      const board = document.querySelector('.board');
+      const addButton = document.querySelector('.add-list');
 
       board.innerHTML = '';
       board.appendChild(addButton);
@@ -71,7 +71,8 @@ function crearTarjeta(task) {
     openModal();
   });
 
-  div.querySelector('.card-add').addEventListener('click', () => {
+  // restaurado: botón con clase 'card-add' y mismo comportamiento
+  div.querySelector('.card-add')?.addEventListener('click', () => {
     tareaParaSubtarea = task;
     tareaEnEdicion = null;
     document.getElementById('modal-title').value = '';
@@ -82,6 +83,7 @@ function crearTarjeta(task) {
 
   return div;
 }
+
 
 function renderSubtask(sub, contenedor) {
   const item = document.createElement('div');
