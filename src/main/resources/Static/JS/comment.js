@@ -30,19 +30,16 @@ function openModalComment(subtask) {
 
   document.getElementById("cuerpo-general").appendChild(div)
 }
-
 function guardarComment(subtask) {
-  const comment = document.getElementById("modal-textarea_comment").Value;
+  const comment = document.getElementById("modal-textarea_comment").value;
+  
   const nuevoComment = {
     comment,
     image_url: "no hay",
-    "user": {
-      "id": 1
-    },
-    "subtask": {
-      "id": subtask
-    }
+    user: { id: 1 },
+    subtask: { id: subtask }
   };
+
   fetch('http://localhost:8080/comments/add', {
     method: 'POST',
     headers: {
@@ -54,7 +51,7 @@ function guardarComment(subtask) {
       cargarTareas();
       closeModalComment();
     })
-    .catch(err => console.error('Error al crear subtarea:', err));
+    .catch(err => console.error('Error al crear comentario:', err));
 }
 
 function  closeModalComment(){

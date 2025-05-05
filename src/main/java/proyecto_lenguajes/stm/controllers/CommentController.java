@@ -9,8 +9,6 @@ import proyecto_lenguajes.stm.Models.Comment;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.web.bind.annotation.GetMapping;
-
 
 @RestController
 @RequestMapping("/comments")
@@ -22,7 +20,7 @@ public class CommentController {
     public CommentController(CommentService commentService) {
         this.commentService = commentService;
     }
-    
+
     @GetMapping
     @Operation(summary = "Listar comentarios", description = "Devuelve una lista de todos los comentarios")
     public List<Comment> list(Model model) {
@@ -34,13 +32,11 @@ public class CommentController {
     public List<Comment> listByid(@PathVariable int id) {
         return commentService.listByid(id);
     }
-    
 
     @PostMapping("/add")
     @Operation(summary = "Agregar comentario", description = "Agrega un nuevo comentario")
-    public String add(@ModelAttribute Comment comment) {
-        commentService.add(comment);
-        return "redirect:/comments";
+    public Comment add(@RequestBody Comment comment) {
+        return commentService.add(comment);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -55,5 +51,5 @@ public class CommentController {
     public String update(@PathVariable int id, @ModelAttribute Comment comment) {
         commentService.update(id, comment);
         return "redirect:/comments";
-    }  
+    }
 }

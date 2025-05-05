@@ -7,7 +7,7 @@ function renderSubtask(subtask, contenedor) {
   <p class="subtask-desc">${subtask.description}</p>
   <div class="comments"></div>
    <div class="modal-actions">
-        <button class="btn btn-green" onclick="openModalComment(${subtask.id})">add Comment</button>
+        <button class="btn btn-green" onclick="openModalComment(${subtask.id})">Add Comment</button>
       </div>
 `
 
