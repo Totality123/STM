@@ -2,27 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Subtask</title>
+  <title>Tasks</title>
+  <link rel="stylesheet" th:href="@{/css/card_task.css}">
   <link rel="stylesheet" th:href="@{/css/card_subtask.css}">
   <link rel="stylesheet" th:href="@{/css/comment.css}">
+  <link rel="stylesheet" th:href="@{/css/modal.css}">
 </head>
 <body>
+
   <a href="/">Home</a>
   <div class="column">
+    <button class="card-delete-x">✕</button>
+
     <div class="column-title">Frontend</div>
     <div class="column-description">Hacer estructura base de los html</div>
+    <div class="progress-title">Progress bar</div>
+    <progress class="column-progress" value="2" max="4"></progress>
 
-    <div class="section-title">Comentarios</div>
+    <div class="section-title">Subtareas</div>
+    <div class="subtasks"></div>
 
     <div class="card-form">
-      <div class="card-buttons">
-        <button class="card-comment">Add a comment</button>
-        <button class="card-delete">Delete</button>
+      <div class="card-button-row">
+        <button class="card-add">Add a subtask</button>
       </div>
-
-      <button class="card-completed">Completed</button>
+      <div class="card-button-row">
+        <button class="card-update">Update</button>
+      </div>
+      <div class="card-button-row">
+        <button class="card-report">Report</button>
+      </div>
     </div>
-  </div>
-  <script th:src="@{/js/comment.js}"></script>
+    
+
+  <script th:src="@{/js/modal.js}"></script>
+  <script th:src="@{/js/task.js}"></script>
+
 </body>
 </html>
