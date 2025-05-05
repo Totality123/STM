@@ -2,26 +2,36 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Modal Comentario</title>
-  <link rel="stylesheet" th:href="@{/css/modal_comment.css}">
+  <title>Report</title>
+  <link rel="stylesheet" th:href="@{/css/report.css}">
 </head>
 <body>
   <a href="/">Home</a>
-  <div class="modal-overlay">
-    <div class="modal">
-      <label class="modal-label">Comentario</label>
-      <textarea class="modal-textarea" placeholder="Escribe tu comentario..."></textarea>
+  <div class="report">
 
-      <label for="imageInput" class="image-button">📷 Adjuntar imagen</label>
-      <input type="file" id="imageInput" accept="image/*">
+    <div class="report-title">
+      Task: <span th:text="${task.name}">Nombre de la tarea</span>
+    </div>
 
-      <img id="previewImage" class="image-preview" src="" style="display: none;">
+    <div class="report-description">
+      Description: <span th:text="${task.description}">Descripción de la tarea</span>
+    </div>
 
-      <div class="modal-actions">
-        <button class="btn btn-green">Guardar</button>
-        <button class="btn btn-red">Cancelar</button>
+    <div class="report-subtitle">Subtasks</div>
+    <div class="report-subtasks">
+      <div class="subtask" th:each="sub : ${task.subtasks}">
+        <div class="subtask-title" th:text="${sub.name}">Subtask</div>
+        <div class="subtask-description" th:text="${sub.description}">Descripción subtarea</div>
+
+        <!-- Comentarios (solo si existen) -->
+        <div class="comment" th:each="com : ${sub.comments}" th:if="${sub.comments != null}">
+          <div class="comment-username" th:text="${com.username}">Nombre del usuario</div>
+          <hr>
+          💬 <span th:text="${com.text}">Comentario</span>
+        </div>
       </div>
     </div>
+
   </div>
 </body>
 </html>

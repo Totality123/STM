@@ -39,6 +39,7 @@ function crearTarjeta(task) {
       <div class="card-buttons">
         <button class="card-add">Add a subtask</button>
         <button class="card-update">Update</button>
+        <button class="card-report">Report</button>
       </div>
     </div>
   `;
@@ -50,7 +51,6 @@ function crearTarjeta(task) {
 
   div.querySelector('.card-delete-x').addEventListener('click', () => {
     const confirmar = confirm(`¿Estás seguro de que deseas eliminar la tarea "${task.name}"?`);
-
     if (confirmar) {
       fetch(`http://localhost:8080/tasks/delete/${task.id}`, {
         method: 'DELETE'
@@ -62,7 +62,7 @@ function crearTarjeta(task) {
     }
   });
 
-  div.querySelector('.card-update').addEventListener('click', () => {
+  div.querySelector('.card-update')?.addEventListener('click', () => {
     tareaEnEdicion = task;
     tareaParaSubtarea = null;
     document.getElementById('modal-title').value = task.name;
@@ -71,7 +71,6 @@ function crearTarjeta(task) {
     openModal();
   });
 
-  // restaurado: botón con clase 'card-add' y mismo comportamiento
   div.querySelector('.card-add')?.addEventListener('click', () => {
     tareaParaSubtarea = task;
     tareaEnEdicion = null;
@@ -81,9 +80,13 @@ function crearTarjeta(task) {
     openModal();
   });
 
+  // ✅ nuevo botón: generar reporte
+  div.querySelector('.card-report')?.addEventListener('click', () => {
+    window.location.href = `/report/${task.id}`;
+  });
+
   return div;
 }
-
 
 function renderSubtask(sub, contenedor) {
   const item = document.createElement('div');

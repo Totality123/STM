@@ -6,37 +6,27 @@
   <link rel="stylesheet" th:href="@{/css/report.css}">
 </head>
 <body>
-  <a href="/">Home</a>
-  <div class="report">
-    <div class="report-user">User: Jackson Medina</div>
+  <a href="/" style="position: absolute; top: 20px; left: 20px; color: #1e3a8a; font-weight: bold;">← Home</a>
 
-    <div class="report-title">Task: Crear estructura base</div>
-    <div class="report-description">Description: Crear las estructura de HTML</div>
+  <div class="report">
+    <div class="report-title">
+      Task: <span th:text="${task.name}">Nombre de la tarea</span>
+    </div>
+
+    <div class="report-description">
+      Description: <span th:text="${task.description}">Descripción de la tarea</span>
+    </div>
 
     <div class="report-subtitle">Subtasks</div>
     <div class="report-subtasks">
-      <div class="subtask">
+      <div class="subtask" th:each="sub : ${task.subtasks}">
         <div class="subtask-title">Subtask</div>
-        <div class="subtask-description">Crear las vistas</div>
-        <div class="comment">
-          <div class="comment-username">Kenny Meléndez</div>
-          <hr>
-          💬 Todo quedó claro con las vistas iniciales.
-        </div>
-      </div>
+        <div class="subtask-description" th:text="${sub.description}">Descripción subtarea</div>
 
-      <div class="subtask">
-        <div class="subtask-title">Subtask</div>
-        <div class="subtask-description">Diseñar la navegación</div>
-        <div class="comment">
-          <div class="comment-username">Jackson Medina</div>
+        <div class="comment" th:each="com : ${sub.comments}">
+          <div class="comment-username" th:text="${com.user.name}">Nombre del usuario</div>
           <hr>
-          💬 La navegación principal se ve bien.
-        </div>
-        <div class="comment">
-          <div class="comment-username">Kenny Meléndez</div>
-          <hr>
-          💬 Pendiente revisar el responsive.
+          💬 <span th:text="${com.comment}">Comentario</span>
         </div>
       </div>
     </div>
