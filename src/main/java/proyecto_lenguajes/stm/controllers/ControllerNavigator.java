@@ -9,7 +9,7 @@ public class ControllerNavigator {
 
     @GetMapping
     public String redireccion1() {
-        return "home";
+        return "login";
     }
 
     @GetMapping("/board")
