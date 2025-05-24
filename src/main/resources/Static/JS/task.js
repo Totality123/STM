@@ -6,7 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cargarTareas() {
-  fetch('http://localhost:8080/tasks')
+  fetch('http://localhost:8080/tasks', {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}` 
+    }
+  })
     .then(res => res.json())
     .then(tareas => {
       const board = document.querySelector('.board');
@@ -53,7 +59,10 @@ function crearTarjeta(task) {
     const confirmar = confirm(`¿Estás seguro de que deseas eliminar la tarea "${task.name}"?`);
     if (confirmar) {
       fetch(`http://localhost:8080/tasks/delete/${task.id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+      "Authorization": `Bearer ${token}` 
+    }
       })
       .then(() => {
         cargarTareas();

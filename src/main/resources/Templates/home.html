@@ -4,19 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Documentoss</title>
-  <link rel="stylesheet" th:href="@{/css/general.css}">
-  <link rel="stylesheet" th:href="@{/css/board.css}">
-  <link rel="stylesheet" th:href="@{/css/card_task.css}">
-  <link rel="stylesheet" th:href="@{/css/card_subtask.css}">
-  <link rel="stylesheet" th:href="@{/css/comment.css}">
-  <link rel="stylesheet" th:href="@{/css/modal_comment.css}">
-  <link rel="stylesheet" th:href="@{/css/modal.css}"> 
+  <link rel="stylesheet" href="/css/general.css">
+  <link rel="stylesheet" href="/css/board.css">
+  <link rel="stylesheet" href="/css/card_task.css">
+  <link rel="stylesheet" href="/css/card_subtask.css">
+  <link rel="stylesheet" href="/css/comment.css">
+  <link rel="stylesheet" href="/css/modal_comment.css">
+  <link rel="stylesheet" href="/css/modal.css">
+  <link rel="stylesheet" href="/css/general.css">
 </head>
 
 <body id="cuerpo-general">
 
   <header class="header">
     <div class="logo"><span>STM</span></div>
+
+    <div><button onclick="cerrarSesion()">Cerrar Sesion</button></div>
   </header>
 
   <!-- esto de aqui es el modal -->
@@ -45,10 +48,12 @@
   </div>
 
 
-  <script th:src="@{/js/task.js}"></script>
-  <script th:src="@{/js/subtask.js}"></script>
-  <script th:src="@{/js/comment.js}"></script>
-  <script th:src="@{/js/modal.js}"></script>
+  <script src="/js/task.js"></script>
+  <script src="/js/subtask.js"></script>
+  <script src="/js/comment.js"></script>
+  <script src="/js/modal.js"></script>  
+  <script src="/js/general.js"></script>
+
 </body>
 
 </html>

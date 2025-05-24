@@ -3,13 +3,16 @@ package proyecto_lenguajes.stm.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.annotation.security.PermitAll;
+
+@PermitAll
 @Controller
 @RequestMapping("/")
 public class ControllerNavigator {
 
     @GetMapping
     public String redireccion1() {
-        return "login";
+        return "home";
     }
 
     @GetMapping("/board")
@@ -25,6 +28,11 @@ public class ControllerNavigator {
     @GetMapping("/modal")
     public String redireccion4() {
         return "modal";
+    }
+
+     @GetMapping("/login")
+    public String redireccion5() {
+        return "login";
     }
 
 }

@@ -47,4 +47,5 @@ public class UserService {
             throw new RuntimeException("proyecto no encontrado con ID: " + id);
         }
     }
+
 }

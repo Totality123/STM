@@ -4,12 +4,11 @@ package proyecto_lenguajes.stm.Models;
 
 import jakarta.persistence.*;
 import lombok.*;
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 
 @Entity
 @Table(name = "user")
-
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
 public class User {
 
     @Id
@@ -18,7 +17,7 @@ public class User {
     @Column(length = 20, nullable = false)
     private String name;
 
-    @Column(length = 20, nullable = false)
+    @Column( nullable = false)
     private String password;
 }
 
