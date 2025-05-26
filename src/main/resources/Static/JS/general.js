@@ -1,9 +1,10 @@
 
 if (!sessionStorage.getItem("jwt")) {
-    window.location.href = "/login"; // Redirigir al login si no hay token
+    window.location.href = "/login"; 
 }
 
 let token = sessionStorage.getItem("jwt")
+
 
 
 function cerrarSesion() {

@@ -30,9 +30,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults()) // CORS habilitado correctamente
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll() // acceso libre al login o registro
-                        .requestMatchers("/", "/board", "/comment", "/modal","/login").permitAll()
-                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers("/auth/**","/","/login","/css/**", "/js/**", "/images/**").permitAll()
                         .anyRequest().authenticated() // todo lo demás requiere autenticación
                 )
                 .sessionManagement(sess -> sess

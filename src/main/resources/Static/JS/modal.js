@@ -35,8 +35,9 @@ document.getElementById('modal-submit').addEventListener('click', () => {
     fetch(`http://localhost:8080/tasks/update/${tareaEnEdicion.id}`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
-      },
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}` 
+    },
       body: JSON.stringify(updatedTask)
     })
     .then(() => {
@@ -59,8 +60,9 @@ document.getElementById('modal-submit').addEventListener('click', () => {
     fetch('http://localhost:8080/subtasks/add', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      },
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}` 
+    },
       body: JSON.stringify(nuevaSubtarea)
     })
     .then(() => {
@@ -81,8 +83,9 @@ document.getElementById('modal-submit').addEventListener('click', () => {
     fetch('http://localhost:8080/tasks/add', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      },
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}` 
+    },
       body: JSON.stringify(nuevaTarea)
     })
     .then(() => {

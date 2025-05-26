@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import proyecto_lenguajes.stm.Models.Comment;
 import proyecto_lenguajes.stm.Models.User;
 import proyecto_lenguajes.stm.service.UserService;
 
@@ -58,5 +59,10 @@ public class UserController {
         userService.delete(id);
     }
 
+    @GetMapping("/username/{nombre}")
+    @Operation(summary = "Obtener usuarioXNombre", description = "Devuelve un usuari por su nombre")
+    public Optional<User> getbyid(@PathVariable String nombre) {
+        return userService.getByName(nombre);
+    }
     
 }
